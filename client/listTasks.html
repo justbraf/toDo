@@ -1,9 +1,18 @@
 <template name="listTasks">
-    <div class="row my-5">
-        <div class="col-xl-6 listTextSize">
+    <div class="row">
+        <div class="col-xl-12 listTextSize">
             <ul class="list-group">
                 {{#each theTasks}}
-                <li class="list-group-item">{{task}}</li>
+                <li class="list-group-item w-100">
+                    <div class="taskItem">
+                        <i class="fa-regular fa-hourglass"></i>
+                        <i class="fa-solid fa-flag-checkered"></i>
+                        {{task}} {{#if private}}[private]{{/if}}
+                    </div>
+                    <div class="taskDelete">
+                        <i class="fa-regular fa-trash-can js-trashIt"></i>
+                    </div>
+                </li>
                 {{/each}}
             </ul>
         </div>

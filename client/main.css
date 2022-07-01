@@ -45,3 +45,12 @@ body {
 .privateTask {
   cursor: pointer;
 }
+
+.taskItem {
+  width: 95%;
+  display: inline-block;
+}
+
+.taskDelete {
+  float: right;
+}

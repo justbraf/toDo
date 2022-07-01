@@ -1,19 +1,14 @@
 Template.addTask.events({
-    'click #js-add'() {
-        let newTask = $("#newTask").val();
-        if (validateTask(newTask)) {
-            addNewTask(newTask);
-        }
+    'click .js-add'() {
+        addNewTask();
     },
     'keypress #newTask'(event) {
         if (event.keyCode == 13) {
-            let newTask = $("#newTask").val();
-            if (validateTask(newTask)) {
-                addNewTask(newTask);
-            }
+            addNewTask();
         }
     },
-    'click .privateTask'() {
+    'click .js-privateTask'() {
+        // Check if HTML element has a particular class
         if ($(".fa-xmark").hasClass("d-none")) {
             $(".fa-check").addClass("d-none");
             $(".fa-xmark").removeClass("d-none");
@@ -36,9 +31,15 @@ let validateTask = (task) => {
     return valid;
 }
 
-let addNewTask = (newTask) => {
-    tododb.insert({
-        "task": newTask
-    });
-    $("#newTask").val("");
+let addNewTask = () => {
+    let newTask = $("#newTask").val();
+    if (validateTask(newTask)) {
+        tododb.insert({
+            "task": newTask,
+            "private": $(".fa-xmark").hasClass("d-none")
+        });
+        $("#newTask").val("");
+        $(".fa-check").addClass("d-none");
+        $(".fa-xmark").removeClass("d-none");
+    }
 }

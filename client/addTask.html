@@ -1,6 +1,6 @@
 <template name="addTask">
     <div class="row">
-        <div class="col-xl-6 addTaskFrame-top pt-4 px-5">
+        <div class="col-xl-12 addTaskFrame-top pt-4 px-5">
             <div class="input-group mb-3" id="js-addTaskGroup">
                 <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-list-check"></i></span>
                 <input type="text" class="form-control inputTaskSize" id="newTask" placeholder="Add a task"
@@ -9,18 +9,20 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xl-6 addTaskFrame-sides px-5 py-2 text-end">
-            <div class="privateTask inputTaskSize">
-                <span>Private</span>
+        <div class="col-xl-12 addTaskFrame-sides px-5 py-2 text-end">
+            <!-- <div class="inputTaskSize"> -->
+            <button class="btn btn-outline-dark ms-4 js-privateTask" type="button">
+                <span class="addBtnSize">Private</span>
                 <i class="fa-solid fa-check d-none"></i>
                 <i class="fa-solid fa-xmark"></i>
-                <button class="btn btn-outline-dark ms-4" type="button" id="js-add"><span
-                        class="addBtnSize">Add</span></button>
-            </div>
+            </button>
+            <button class="btn btn-outline-dark ms-4 js-add" type="button">
+                <span class="addBtnSize">Add</span></button>
+            <!-- </div> -->
         </div>
     </div>
     <div class="row">
-        <div class="col-xl-6 addTaskFrame-bottom px-5 pb-4 pt-2 text-end">
+        <div class="col-xl-12 addTaskFrame-bottom px-5 pb-4 pt-2 text-end">
 
         </div>
     </div>
