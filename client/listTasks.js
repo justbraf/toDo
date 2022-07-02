@@ -1,12 +1,16 @@
 Template.listTasks.helpers({
     theTasks() {
-        return tododb.find();
+        return tododb.find({ "trashBin": false });
     }
 });
 
 Template.listTasks.events({
     'click .js-trashIt'() {
         let taskId = this._id;
-        // tododb.remove({ _id: taskId });
+        tododb.update({ _id: taskId }, {
+            $set: {
+                "trashBin": true
+            }
+        });
     }
-})
+});

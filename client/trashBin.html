@@ -1,0 +1,33 @@
+<template name="trashBin">
+    <div class="row my-3">
+        <div class="col-xl-12 listTextSize">
+            <div class="collapse" id="collapseTrashBin">
+                <h1 class="display-4">Trash Bin</h1>
+                <ul class="list-group">
+                    {{#each theTasks}}
+                    <li class="list-group-item w-100">
+                        <div class="taskItem">
+                            <i class="fa-regular fa-hourglass"></i>
+                            <i class="fa-solid fa-flag-checkered"></i>
+                            {{task}} {{#if private}}[private]{{/if}}
+                        </div>
+                        <div class="taskDelete ms-3">
+                            <i class="fa-regular fa-trash-can js-deleteIt"></i>
+                        </div>
+                        <div class="taskRestore">
+                            <i class="fa-solid fa-trash-arrow-up js-restoreIt"></i>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            <p>
+                <a class="btn btn-outline-dark my-4 js-trashCollapseBtn" data-bs-toggle="collapse"
+                    href="#collapseTrashBin" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    Show Trash Bin
+                </a>
+            </p>
+        </div>
+    </div>
+</template>

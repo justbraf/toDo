@@ -36,7 +36,8 @@ let addNewTask = () => {
     if (validateTask(newTask)) {
         tododb.insert({
             "task": newTask,
-            "private": $(".fa-xmark").hasClass("d-none")
+            "private": $(".fa-xmark").hasClass("d-none"),
+            "trashBin": false
         });
         $("#newTask").val("");
         $(".fa-check").addClass("d-none");

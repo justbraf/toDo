@@ -10,11 +10,12 @@ import './addTask.html';
 import './addTask.js';
 import './listTasks.html';
 import './listTasks.js';
+import './trashBin.html';
+import './trashBin.js';
 
-// task
+
 // status
 // dueDate
 // ownId
 // compId
-// private: Boolean
 // trashBin

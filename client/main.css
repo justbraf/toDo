@@ -47,10 +47,12 @@ body {
 }
 
 .taskItem {
-  width: 95%;
+  width: 85%;
   display: inline-block;
 }
 
-.taskDelete {
+.taskDelete,
+.taskRestore {
   float: right;
+  cursor: pointer;
 }
