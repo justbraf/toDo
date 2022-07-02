@@ -1,0 +1,14 @@
+<template name="loginForm">
+    <div class="row">
+        <div class="col-xl-12 mb-3">
+            {{#if currentUser}}
+            <h1 class="dispay-6 salutation">Welcome&nbsp;{{salutation}}</h1>
+            <button class="btn btn-outline-danger float-end js-logout" type="button">
+                <span class="addBtnSize">Logout</span>
+            </button>
+            {{else}}
+            {{> atForm}}
+            {{/if}}
+        </div>
+    </div>
+</template>
