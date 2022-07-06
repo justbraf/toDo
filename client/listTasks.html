@@ -1,16 +1,23 @@
 <template name="listTasks">
     <div class="row">
-        <div class="col-xl-12 listTextSize">
+        <div class="col-lg-12 ">
             <ul class="list-group">
                 {{#each theTasks}}
-                <li class="list-group-item w-100">
-                    <div class="taskItem">
-                        <i class="fa-regular fa-hourglass"></i>
-                        <i class="fa-solid fa-flag-checkered"></i>
-                        {{task}} {{#if private}}[private]{{/if}}
-                    </div>
-                    <div class="taskDelete">
-                        <i class="fa-regular fa-trash-can js-trashIt"></i>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-lg-1">
+                            <i class="fa-regular fa-hourglass"></i>
+                            <!-- <i class="fa-solid fa-flag-checkered"></i> -->
+                        </div>
+                        <div class="col-lg-10">
+                            <span class="myTask">{{task}}</span> <i
+                                class="fa-solid fa-eye{{#if private}}-slash{{/if}}"></i>
+                        </div>
+                        {{#if currentUser}}
+                        <div class="col-lg-1">
+                            <i class="fa-solid fa-square-xmark js-trashIt"></i>
+                        </div>
+                        {{/if}}
                     </div>
                 </li>
                 {{/each}}

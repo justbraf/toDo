@@ -1,0 +1,16 @@
+<template name="titleBar">
+    <div class="row justify-content-around my-3">
+        {{#if currentUser}}
+        <div class="col-lg-10 text-center">
+            {{> header dataMode=1}}
+        </div>
+        <div class="col-lg">
+            {{> logoutForm}}
+        </div>
+        {{else}}
+        <div class="col-lg-6">
+            {{> header dataMode=0}}
+        </div>
+        {{/if}}
+    </div>
+</template>

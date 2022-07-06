@@ -1,29 +1,36 @@
 <template name="addTask">
-    <div class="row">
-        <div class="col-xl-12 addTaskFrame-top pt-4 px-5">
-            <div class="input-group mb-3" id="js-addTaskGroup">
-                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-list-check"></i></span>
-                <input type="text" class="form-control inputTaskSize" id="newTask"
-                    placeholder="Enter task you want to track" aria-label="Username" aria-describedby="basic-addon1">
+    <div class="border border-1 rounded border-secondary p-2">
+        <div class="row pt-4 px-3 mb-3">
+            <div class="col-lg-12">
+                <div class="input-group" id="js-addTaskGroup">
+                    <span class="input-group-text" id="basic-addonTask">Task&nbsp;<i
+                            class="fa-solid fa-list-check"></i></span>
+                    <textarea placeholder="What is your task?" class="form-control" id="newTask" rows="1"
+                        aria-label="What is your task?" aria-describedby="basic-addonTask"></textarea>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-xl-12 addTaskFrame-sides px-5 py-2 text-end">
-            <!-- <div class="inputTaskSize"> -->
-            <button class="btn btn-outline-dark ms-4 js-privateTask" type="button">
-                <i class="fa-solid fa-check d-none"></i>
-                <i class="fa-solid fa-xmark"></i>
-                <span class="addBtnSize">&nbsp;Private</span>
-            </button>
-            <button class="btn btn-outline-dark ms-4 js-add" type="button">
-                <span class="addBtnSize">Add Task</span></button>
-            <!-- </div> -->
+        <div class="row px-3 mb-3 justify-content-around">
+            <div class="col-lg-8">
+                <div class="input-group" id="js-addDateGroup">
+                    <span class="input-group-text" id="basic-addonDate">Due Date&nbsp;<i
+                            class="fa-solid fa-calendar"></i></span>
+                    <input type="date" min="2022-01-01" class="form-control" id="dueDate">
+                </div>
+            </div>
+            <div class="col-lg-4 text-end">
+                <button class="btn btn-outline-dark js-privateTask" type="button">
+                    <i class="fa-solid fa-eye isPrivate"></i>
+                    <span class="privateBtn">&nbsp;Public</span>
+                </button>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-xl-12 addTaskFrame-bottom px-5 pb-4 pt-2 text-end">
+        <div class="row px-3 mb-3 justify-content-around">
 
+            <div class="col-lg-5 text-center">
+                <button class="btn btn-outline-dark js-add" type="button">
+                    <span class="addBtnSize">Add Task</span></button>
+            </div>
         </div>
     </div>
 </template>

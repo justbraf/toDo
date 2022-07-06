@@ -1,3 +1,5 @@
+import date from 'date-and-time';
+
 Template.addTask.events({
     'click .js-add'() {
         addNewTask();
@@ -9,13 +11,15 @@ Template.addTask.events({
     },
     'click .js-privateTask'() {
         // Check if HTML element has a particular class
-        if ($(".fa-xmark").hasClass("d-none")) {
-            $(".fa-check").addClass("d-none");
-            $(".fa-xmark").removeClass("d-none");
+        if ($(".isPrivate").hasClass("fa-eye")) {
+            $(".isPrivate").addClass("fa-eye-slash");
+            $(".isPrivate").removeClass("fa-eye");
+            $(".privateBtn").text(" Private");
         }
         else {
-            $(".fa-check").removeClass("d-none");
-            $(".fa-xmark").addClass("d-none");
+            $(".isPrivate").removeClass("fa-eye-slash");
+            $(".isPrivate").addClass("fa-eye");
+            $(".privateBtn").text(" Public");
         }
     }
 });
@@ -24,7 +28,6 @@ let validateTask = (task) => {
     let valid = true;
     $("#js-addTaskGroup").removeClass("errorBox");
     if (task == "") {
-        console.log("Cannot be empty");
         $("#js-addTaskGroup").addClass("errorBox");
         valid = false;
     }
@@ -33,14 +36,19 @@ let validateTask = (task) => {
 
 let addNewTask = () => {
     let newTask = $("#newTask").val();
+    let dueDate = $("#dueDate").val();
     if (validateTask(newTask)) {
         tododb.insert({
             "task": newTask,
-            "private": $(".fa-xmark").hasClass("d-none"),
+            "private": $(".isPrivate").hasClass("fa-eye-slash"),
+            // "dueDate": dueDate,
+            "ownId": Meteor.userId(),
             "trashBin": false
         });
         $("#newTask").val("");
-        $(".fa-check").addClass("d-none");
-        $(".fa-xmark").removeClass("d-none");
+        $("#dueDate").val("");
+        $(".isPrivate").removeClass("fa-eye-slash");
+        $(".isPrivate").addClass("fa-eye");
+        $(".privateBtn").text(" Public");
     }
 }

@@ -11,6 +11,7 @@
     "@babel/runtime": "^7.17.9",
     "@popperjs/core": "^2.11.5",
     "bootstrap": "^5.2.0-beta1",
+    "date-and-time": "^2.4.0",
     "jquery": "^3.6.0",
     "meteor-node-stubs": "^1.2.1"
   },
