@@ -15,10 +15,12 @@ Template.listTasks.events({
     },
     'dblclick .myTask'(event) {
         if (!$(".list-group-item textarea").hasClass("editing")) {
+            let taskData = this.task;
+            taskData = taskData.replace(/[\n\r]/g, '');
             let editInput = document.createElement("textarea");
             editInput.type = "text";
             editInput.classList = "editing w-100";
-            editInput.value = this.task;
+            editInput.value = taskData;
             event.currentTarget.replaceWith(editInput);
             $(".editing").focus();
         }
@@ -27,6 +29,7 @@ Template.listTasks.events({
         if (event.keyCode == 13) {
             let uId = this._id;
             let newVal = $(".editing").val();
+            newVal = newVal.replace(/[\n\r]/g, '');
             let savedInput = document.createElement("span");
             savedInput.classList = "myTask";
             savedInput.innerHTML = newVal;
