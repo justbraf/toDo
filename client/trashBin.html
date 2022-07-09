@@ -7,17 +7,20 @@
                     {{#each theTasks}}
                     <li class="list-group-item">
                         <div class="row">
-                            <div class="col-lg-1">
+                            <div class="col-1">
+                                <i class="fa-solid fa-eye{{#if private}}-slash{{/if}} "></i>
+                            </div>
+                            <div class="col-1">
                                 <i class="fa-regular fa-hourglass"></i>
                                 <!-- <i class="fa-solid fa-flag-checkered"></i> -->
                             </div>
-                            <div class="col-lg-9">
-                                {{task}} {{#if private}}[private]{{/if}}
+                            <div class="col-8">
+                                {{task}}
                             </div>
-                            <div class="col-lg-1">
+                            <div class="col-1">
                                 <i class="fa-solid fa-trash-arrow-up js-restoreIt"></i>
                             </div>
-                            <div class="col-lg-1">
+                            <div class="col-1">
                                 <i class="fa-regular fa-trash-can js-deleteIt"></i>
                             </div>
                         </div>

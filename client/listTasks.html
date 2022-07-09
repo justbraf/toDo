@@ -5,16 +5,18 @@
                 {{#each theTasks}}
                 <li class="list-group-item">
                     <div class="row">
-                        <div class="col-lg-1">
+                        <div class="col-1">
+                            <i class="fa-solid fa-eye{{#if private}}-slash{{/if}} "></i>
+                        </div>
+                        <div class="col-1">
                             <i class="fa-regular fa-hourglass"></i>
                             <!-- <i class="fa-solid fa-flag-checkered"></i> -->
                         </div>
-                        <div class="col-lg-10">
-                            <span class="myTask">{{task}}</span> <i
-                                class="fa-solid fa-eye{{#if private}}-slash{{/if}}"></i>
+                        <div class="col-9">
+                            <span class="myTask">{{task}}</span>
                         </div>
                         {{#if currentUser}}
-                        <div class="col-lg-1">
+                        <div class="col-1">
                             <i class="fa-solid fa-square-xmark js-trashIt"></i>
                         </div>
                         {{/if}}

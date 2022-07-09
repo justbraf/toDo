@@ -22,7 +22,7 @@ Template.listTasks.events({
             editInput.classList = "editing w-100";
             editInput.value = taskData;
             event.currentTarget.replaceWith(editInput);
-            $(".editing").focus();
+            document.querySelector(".editing").focus();
         }
     },
     'keyup .editing'(event) {
